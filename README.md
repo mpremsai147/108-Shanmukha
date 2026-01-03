@@ -1,16 +1,15 @@
-1. Problem Statement
+Problem Statement (Humanized)
 
-Indoor navigation in large buildings such as hospitals, malls, airports, universities, and offices is difficult due to:
+Navigating large indoor spaces can be confusing and stressful, especially for first-time visitors, elderly individuals, and people with visual or cognitive impairments. Places like hospitals, airports, shopping malls, and university campuses often have complex layouts with multiple floors, departments, and corridors. Traditional signboards are often insufficient, difficult to understand, or poorly placed, leading to confusion and wasted time.
 
-Lack of GPS accuracy indoors
+Unlike outdoor navigation, indoor environments do not support accurate GPS tracking, and most existing indoor navigation systems require costly hardware, specialized sensors, or pre-installed infrastructure. As a result, these solutions are not widely accessible or affordable. Additionally, most current systems lack natural interaction and fail to provide personalized, real-time guidance.
 
-Complex layouts and poor signage
+There is a need for an intelligent indoor navigation system that is easy to use, cost-effective, and accessible to all users. Such a system should understand natural human language, provide real-time guidance, and visually assist users within their surroundings. This project aims to address these challenges by developing an LLM-powered conversational AR indoor navigation system that enhances indoor mobility, improves accessibility, and supports smart building environments.
+Abstract:Indoor navigation remains a major challenge in large and complex environments such as hospitals, shopping malls, airports, and university campuses. Unlike outdoor navigation, where GPS provides accurate guidance, indoor spaces lack reliable positioning systems and intuitive navigation support. Existing solutions often depend on expensive infrastructure, fixed sensors, or static maps, making them difficult to scale and inaccessible to many users.
 
-Limited accessibility for visually or cognitively impaired users
+This project proposes an LLM-Powered Conversational AR Indoor Navigation System that combines Large Language Models (LLMs) with Augmented Reality (AR) to deliver an intelligent, interactive, and user-friendly indoor navigation experience. The system allows users to communicate naturally through voice or text commands, such as asking for directions to a specific room or facility. The LLM understands the user’s intent, processes contextual information, and generates accurate navigation instructions.
 
-Existing solutions requiring costly hardware (beacons, sensors)
-
-Users need an intelligent, interactive, and intuitive indoor navigation system that understands natural language queries and provides real-time AR guidance.
+Using AR technology, the system overlays real-time visual cues—such as arrows, labels, and markers—directly onto the user’s physical environment, guiding them step-by-step to their destination. The solution does not rely on GPS and can operate using indoor positioning methods such as QR codes or visual markers. This approach enhances accessibility, improves user confidence, and provides an efficient navigation solution for smart indoor environments.
 
 2. Proposed Solution
 
