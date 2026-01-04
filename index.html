@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Research Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+
+<div class="main-container" style="width: 100%; max-width: 1200px; margin: 20px; display: flex; gap: 30px; flex-wrap: wrap;">
+
+    <!-- Left Panel: Drug Database & Info -->
+    <div class="sidebar" style="flex: 1; min-width: 300px; background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 119, 182, 0.1); padding: 30px; height: fit-content;">
+        <div class="header" style="margin-bottom: 30px; border-bottom: 2px solid #0077b6; padding-bottom: 20px;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #0077b6, #00b4d8); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-pills" style="color: white; font-size: 24px;"></i>
+                </div>
+                <div>
+                    <h1 style="margin: 0; color: #1a3c6e; font-size: 28px; font-weight: 700;">Clinical Research Assistant</h1>
+                    <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">FDA-verified drug information system</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="drug-search" style="margin-bottom: 25px;">
+            <h3 style="color: #1a3c6e; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-search" style="color: #0077b6;"></i> Quick Drug Search
+            </h3>
+            <div style="position: relative;">
+                <input type="text" id="drug-search" placeholder="Search for a medication..." style="width: 100%; padding: 14px 20px; padding-left: 45px; border: 2px solid #e0e6ef; border-radius: 12px; font-size: 16px; transition: all 0.3s; outline: none; font-family: 'Inter', sans-serif;" 
+                       onfocus="this.style.borderColor='#0077b6'; this.style.boxShadow='0 0 0 3px rgba(0, 119, 182, 0.1)'"
+                       onblur="this.style.borderColor='#e0e6ef'; this.style.boxShadow='none'">
+                <i class="fas fa-search" style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: #8a9fb5;"></i>
+            </div>
+        </div>
+
+        <div class="popular-drugs" style="margin-bottom: 30px;">
+            <h4 style="color: #1a3c6e; margin-bottom: 15px; font-size: 16px; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-fire" style="color: #ff6b6b;"></i> Popular Medications
+            </h4>
+            <div class="drug-tags" style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span class="drug-tag" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; cursor: pointer; transition: transform 0.2s;" 
+                      onclick="setDrugQuery('acetaminophen')">Acetaminophen</span>
+                <span class="drug-tag" style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; cursor: pointer; transition: transform 0.2s;" 
+                      onclick="setDrugQuery('ibuprofen')">Ibuprofen</span>
+                <span class="drug-tag" style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; cursor: pointer; transition: transform 0.2s;" 
+                      onclick="setDrugQuery('metformin')">Metformin</span>
+                <span class="drug-tag" style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px; cursor: pointer; transition: transform 0.2s;" 
+                      onclick="setDrugQuery('amoxicillin')">Amoxicillin</span>
+            </div>
+        </div>
+
+        <div class="info-card" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 15px; padding: 20px; margin-bottom: 25px; border-left: 5px solid #00b4d8;">
+            <h4 style="color: #1a3c6e; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-info-circle" style="color: #00b4d8;"></i> About This System
+            </h4>
+            <p style="color: #555; font-size: 14px; line-height: 1.6; margin: 0;">
+                This AI assistant provides FDA-verified drug information combined with clinical research data. All responses are based on official sources and clinical documents.
+            </p>
+        </div>
+
+        <div class="warning-box" style="background: #fff3cd; border-left: 5px solid #ffc107; border-radius: 10px; padding: 20px;">
+            <h4 style="color: #856404; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-size: 16px;">
+                <i class="fas fa-exclamation-triangle" style="color: #ffc107;"></i> Important Disclaimer
+            </h4>
+            <p style="color: #856404; font-size: 13px; line-height: 1.5; margin: 0;">
+                This information is for educational purposes only. Always consult with a qualified healthcare professional for medical advice.
+            </p>
+        </div>
+    </div>
+
+    <!-- Right Panel: Chat Interface -->
+    <div class="chat-container" style="flex: 2; min-width: 500px; display: flex; flex-direction: column;">
+        <div class="chat-header" style="background: white; border-radius: 20px 20px 0 0; padding: 25px 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h2 style="margin: 0; color: #1a3c6e; font-weight: 700;">Chat with Pharmacist AI</h2>
+                    <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">Ask about medications, dosage, interactions, and more</p>
+                </div>
+                <div class="status-indicator" style="display: flex; align-items: center; gap: 10px; background: #e8f5e9; padding: 8px 16px; border-radius: 20px;">
+                    <div class="status-dot" style="width: 10px; height: 10px; background: #2ecc71; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                    <span style="color: #27ae60; font-size: 14px; font-weight: 600;">System Active</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="chat-messages" style="flex: 1; background: white; padding: 30px; overflow-y: auto; max-height: 500px; font-family: 'Source Serif Pro', serif;">
+            <!-- Welcome Message -->
+            <div class="message bot" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 18px; padding: 20px; margin-bottom: 20px; max-width: 80%; border-left: 5px solid #00b4d8;">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                    <div class="avatar" style="width: 40px; height: 40px; background: linear-gradient(135deg, #0077b6, #00b4d8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-robot" style="color: white; font-size: 18px;"></i>
+                    </div>
+                    <div>
+                        <div style="font-weight: 600; color: #1a3c6e; margin-bottom: 8px; font-size: 15px;">Clinical Research Assistant</div>
+                        <div style="color: #333; line-height: 1.6;">Hello! I'm your AI clinical research assistant. I can provide information about medications, dosage, side effects, interactions, and more. How can I help you today?</div>
+                        <div style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px;">
+                            <span style="background: white; padding: 6px 14px; border-radius: 15px; font-size: 13px; color: #0077b6; border: 1px solid #0077b6; cursor: pointer;" onclick="setExampleQuery('What is the maximum daily dose of acetaminophen?')">Max dose of acetaminophen</span>
+                            <span style="background: white; padding: 6px 14px; border-radius: 15px; font-size: 13px; color: #0077b6; border: 1px solid #0077b6; cursor: pointer;" onclick="setExampleQuery('Tell me about ibuprofen side effects')">Ibuprofen side effects</span>
+                            <span style="background: white; padding: 6px 14px; border-radius: 15px; font-size: 13px; color: #0077b6; border: 1px solid #0077b6; cursor: pointer;" onclick="setExampleQuery('Metformin interactions with alcohol')">Metformin interactions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area" style="background: white; border-radius: 0 0 20px 20px; padding: 25px 30px; box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);">
+            <form id="chat-form" style="display: flex; gap: 15px;">
+                <div style="flex: 1; position: relative;">
+                    <input type="text" id="user-input" placeholder="Ask about a drug (e.g., 'What are the side effects of aspirin?')" 
+                           required style="width: 100%; padding: 18px 25px; padding-left: 55px; border: 2px solid #e0e6ef; border-radius: 15px; font-size: 16px; transition: all 0.3s; outline: none; font-family: 'Inter', sans-serif; background: #f8f9fa;"
+                           onfocus="this.style.borderColor='#0077b6'; this.style.background='white'"
+                           onblur="this.style.borderColor='#e0e6ef'; this.style.background='#f8f9fa'">
+                    <i class="fas fa-comment-medical" style="position: absolute; left: 22px; top: 50%; transform: translateY(-50%); color: #8a9fb5; font-size: 20px;"></i>
+                </div>
+                <button type="submit" style="background: linear-gradient(135deg, #0077b6, #00b4d8); color: white; border: none; padding: 0 35px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; gap: 10px;"
+                        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 5px 15px rgba(0, 119, 182, 0.3)'"
+                        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </form>
+            
+            <div style="display: flex; justify-content: space-between; margin-top: 20px; font-size: 14px; color: #666;">
+                <div style="display: flex; gap: 20px;">
+                    <span><i class="fas fa-shield-alt" style="color: #0077b6;"></i> FDA-Verified</span>
+                    <span><i class="fas fa-file-medical-alt" style="color: #0077b6;"></i> Clinical Research</span>
+                </div>
+                <span><i class="fas fa-clock" style="color: #0077b6;"></i> Updated: March 2024</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+    
+    .drug-tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    #chat-messages::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+    #chat-messages::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+    
+    #chat-messages::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #0077b6, #00b4d8);
+        border-radius: 4px;
+    }
+    
+    .message {
+        animation: fadeIn 0.3s ease-in;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+
+<script>
+const form = document.getElementById("chat-form");
+const input = document.getElementById("user-input");
+const messages = document.getElementById("chat-messages");
+
+// Function to add message to chat
+function addMessage(sender, text, isBot = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
+    messageDiv.style.cssText = isBot ? 
+        'background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 18px; padding: 20px; margin-bottom: 20px; max-width: 80%; border-left: 5px solid #00b4d8;' :
+        'background: linear-gradient(135deg, #0077b6, #00b4d8); color: white; border-radius: 18px; padding: 20px; margin-bottom: 20px; max-width: 80%; margin-left: auto;';
+    
+    const avatarHtml = isBot ? 
+        '<div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0077b6, #00b4d8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;"><i class="fas fa-robot" style="color: white; font-size: 18px;"></i></div>' :
+        '<div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;"><i class="fas fa-user" style="color: white; font-size: 18px;"></i></div>';
+    
+    messageDiv.innerHTML = `
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+            ${avatarHtml}
+            <div style="flex: 1;">
+                <div style="font-weight: 600; margin-bottom: 8px; font-size: 15px; color: ${isBot ? '#1a3c6e' : 'white'}">
+                    ${isBot ? 'Clinical Research Assistant' : 'You'}
+                </div>
+                <div style="color: ${isBot ? '#333' : 'white'}; line-height: 1.6;">
+                    ${text}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    messages.appendChild(messageDiv);
+    messages.scrollTop = messages.scrollHeight;
+}
+
+// Function to add typing indicator
+function addTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.id = 'typing-indicator';
+    typingDiv.style.cssText = 'background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 18px; padding: 20px; margin-bottom: 20px; max-width: 80%; border-left: 5px solid #00b4d8;';
+    typingDiv.innerHTML = `
+        <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #0077b6, #00b4d8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-robot" style="color: white; font-size: 18px;"></i>
+            </div>
+            <div>
+                <div style="font-weight: 600; color: #1a3c6e; margin-bottom: 8px; font-size: 15px;">Clinical Research Assistant</div>
+                <div style="color: #666; font-style: italic; display: flex; align-items: center; gap: 5px;">
+                    <span>Typing</span>
+                    <div class="typing-dots">
+                        <span style="animation: typing 1.4s infinite; animation-delay: 0s; margin-right: 2px;">.</span>
+                        <span style="animation: typing 1.4s infinite; animation-delay: 0.2s; margin-right: 2px;">.</span>
+                        <span style="animation: typing 1.4s infinite; animation-delay: 0.4s;">.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    messages.appendChild(typingDiv);
+    messages.scrollTop = messages.scrollHeight;
+}
+
+// Function to remove typing indicator
+function removeTypingIndicator() {
+    const typingIndicator = document.getElementById('typing-indicator');
+    if (typingIndicator) {
+        typingIndicator.remove();
+    }
+}
+
+// Function to set example query
+function setExampleQuery(query) {
+    input.value = query;
+    input.focus();
+}
+
+// Function to set drug query
+function setDrugQuery(drug) {
+    input.value = `Tell me about ${drug}`;
+    input.focus();
+}
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const userText = input.value.trim();
+    if (!userText) return;
+
+    // Add user message
+    addMessage('user', userText, false);
+    input.value = "";
+
+    // Show typing indicator
+    addTypingIndicator();
+
+    try {
+        // Send request to backend
+        const response = await fetch("http://127.0.0.1:5000/chat", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({message: userText})
+        });
+
+        const data = await response.json();
+        
+        // Remove typing indicator
+        removeTypingIndicator();
+        
+        // Add bot response
+        if (data.reply) {
+            addMessage('bot', data.reply, true);
+        } else {
+            addMessage('bot', "I apologize, but I couldn't process your request. Please try again.", true);
+        }
+    } catch (error) {
+        removeTypingIndicator();
+        addMessage('bot', "Error connecting to the server. Please make sure the backend is running.", true);
+        console.error("Error:", error);
+    }
+});
+
+// Add typing animation style
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes typing {
+        0%, 60%, 100% { opacity: 0.3; }
+        30% { opacity: 1; }
+    }
+`;
+document.head.appendChild(style);
+
+// Allow sending message with Enter key
+input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        form.dispatchEvent(new Event('submit'));
+    }
+});
+
+// Initialize drug search functionality
+document.getElementById('drug-search').addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    const drugTags = document.querySelectorAll('.drug-tag');
+    
+    drugTags.forEach(tag => {
+        if (tag.textContent.toLowerCase().includes(searchTerm)) {
+            tag.style.display = 'inline-block';
+        } else {
+            tag.style.display = 'none';
+        }
+    });
+});
+</script>
+
+</body>
+</html>
