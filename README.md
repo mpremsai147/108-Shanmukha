@@ -1,4 +1,4 @@
-AI Pharmacist Assistant(Health • Safety • Prevention)
+AI Pharmacist Assistant
 
 Problem Statement
 
@@ -62,12 +62,7 @@ Key Features
 
 Drug & Medication Tracking
 
-Daily logging of prescription, OTC, or recreational drug use
-
 Dosage and frequency monitoring
-
-Reminder-based usage consistency checks
-
 
 Risk Detection
 
@@ -75,29 +70,13 @@ Drug–drug interaction alerts
 
 Overuse and dependency risk identification
 
-Habitual misuse pattern detection
-
-Red-flag behavior alerts (e.g., increasing dosage)
-
-
-Health & Behavior Insights (Non-Medical)
-
-Stress-linked substance usage detection
-
-Sleep disruption correlation analysis
-
-Mood and productivity impact insights
-
-
-Preventive Guidance
-
 Safe-use reminders
 
 Educational nudges
 
 Suggestions to seek professional advice (without diagnosis)
 
-Harm-reduction focused recommendations
+
 
 
 
