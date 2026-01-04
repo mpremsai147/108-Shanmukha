@@ -1,4 +1,4 @@
-AI Drug Risk Detector (Health • Safety • Prevention)
+AI Pharmacist Assistant(Health • Safety • Prevention)
 
 Problem Statement
 
