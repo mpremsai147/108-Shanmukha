@@ -1,118 +1,113 @@
-Problem Statement (Humanized)
+AI Drug Risk Detector (Health • Safety • Prevention)
 
-Navigating large indoor spaces can be confusing and stressful, especially for first-time visitors, elderly individuals, and people with visual or cognitive impairments. Places like hospitals, airports, shopping malls, and university campuses often have complex layouts with multiple floors, departments, and corridors. Traditional signboards are often insufficient, difficult to understand, or poorly placed, leading to confusion and wasted time.
+Problem Statement
 
-Unlike outdoor navigation, indoor environments do not support accurate GPS tracking, and most existing indoor navigation systems require costly hardware, specialized sensors, or pre-installed infrastructure. As a result, these solutions are not widely accessible or affordable. Additionally, most current systems lack natural interaction and fail to provide personalized, real-time guidance.
+Drug misuse and unsafe medication practices are a growing concern among students, young adults, and patients. Many individuals consume prescription drugs, over-the-counter medicines, or recreational substances without fully understanding their risks, interactions, or long-term consequences.
 
-There is a need for an intelligent indoor navigation system that is easy to use, cost-effective, and accessible to all users. Such a system should understand natural human language, provide real-time guidance, and visually assist users within their surroundings. This project aims to address these challenges by developing an LLM-powered conversational AR indoor navigation system that enhances indoor mobility, improves accessibility, and supports smart building environments.
-Abstract:Indoor navigation remains a major challenge in large and complex environments such as hospitals, shopping malls, airports, and university campuses. Unlike outdoor navigation, where GPS provides accurate guidance, indoor spaces lack reliable positioning systems and intuitive navigation support. Existing solutions often depend on expensive infrastructure, fixed sensors, or static maps, making them difficult to scale and inaccessible to many users.
+Key challenges include:
 
-This project proposes an LLM-Powered Conversational AR Indoor Navigation System that combines Large Language Models (LLMs) with Augmented Reality (AR) to deliver an intelligent, interactive, and user-friendly indoor navigation experience. The system allows users to communicate naturally through voice or text commands, such as asking for directions to a specific room or facility. The LLM understands the user’s intent, processes contextual information, and generates accurate navigation instructions.
+Lack of awareness about drug interactions and side effects
 
-Using AR technology, the system overlays real-time visual cues—such as arrows, labels, and markers—directly onto the user’s physical environment, guiding them step-by-step to their destination. The solution does not rely on GPS and can operate using indoor positioning methods such as QR codes or visual markers. This approach enhances accessibility, improves user confidence, and provides an efficient navigation solution for smart indoor environments.
+Self-medication without professional guidance
 
-2. Proposed Solution
+Mixing substances due to stress, peer pressure, or misinformation
 
-The proposed system uses:
+Difficulty recognizing early warning signs of dependency or misuse
 
-Large Language Models (LLMs) for conversational interaction
 
-Augmented Reality (AR) for visual navigation cues
+Existing drug information apps and websites provide static information but fail to:
 
-Indoor positioning techniques (QR codes / Wi-Fi / BLE / visual markers)
+Analyze user-specific patterns
 
-Users can talk to the system like:
+Detect behavioral risk trends
 
-“Take me to the cardiology department”
-“Where is the nearest washroom?”
-“Guide me to Room 305”
+Offer contextual, preventive guidance
 
-The system responds with:
 
-Conversational directions
+As a result, users often receive generic warnings rather than personalized risk insights, leading to delayed intervention, health risks, and poor decision-making.
 
-AR arrows and markers overlaid on the real environment
+There is a critical need for an intelligent, preventive system that detects drug-related risks early and guides users safely and responsibly.
 
-Context-aware instructions (turn left, go straight, floor change)
 
-3. Key Features
+---
 
-Conversational navigation using natural language
+Objective
 
-Real-time AR path visualization
+To develop an AI-powered Drug Risk Detector that analyzes user-reported medication and substance usage patterns, identifies potential risks, and provides clear, non-judgmental, and preventive guidance—without replacing medical professionals.
 
-Multi-floor indoor navigation
 
-Accessibility support (voice guidance)
+---
 
-Context-aware responses (distance, obstacles)
+Solution Overview
 
-Dynamic rerouting
+The AI Drug Risk Detector uses user inputs, rule-based safety checks, and AI-driven reasoning to assess drug-related risks in real time.
 
-Works without GPS
-4. Technologies & Tools
-AI & NLP
+Instead of merely listing drug facts, the system:
 
-Python
+Detects patterns of misuse or unsafe behavior
 
-LLMs: OpenAI API / LLaMA / Gemini
+Identifies interaction and dependency risks
 
-NLP libraries: LangChain, spaCy
+Explains risks in simple, human-friendly language
 
-AR & Frontend
+Encourages early corrective actions and professional consultation when needed
 
-Unity + ARCore (Android) / ARKit (iOS)
 
-OR WebAR (Three.js + A-Frame)
+The system acts as a safety companion, not a diagnostic tool.
 
-HTML, CSS, JavaScript
 
-Backend
+---
 
-FastAPI / Flask
+Key Features
 
-REST APIs
+Drug & Medication Tracking
 
-Database
+Daily logging of prescription, OTC, or recreational drug use
 
-PostgreSQL / Firebase / MongoDB
+Dosage and frequency monitoring
 
-Indoor map graph storage
+Reminder-based usage consistency checks
 
-Indoor Positioning
 
-QR codes
+Risk Detection
 
-BLE beacons (optional)
+Drug–drug interaction alerts
 
-Visual marker tracking
+Overuse and dependency risk identification
 
-5. Workflow
+Habitual misuse pattern detection
 
-User opens AR app
+Red-flag behavior alerts (e.g., increasing dosage)
 
-Camera scans environment / QR code
 
-User gives voice/text command
+Health & Behavior Insights (Non-Medical)
 
-LLM understands intent & destination
+Stress-linked substance usage detection
 
-Navigation engine calculates path
+Sleep disruption correlation analysis
 
-AR overlays directions in real time
+Mood and productivity impact insights
 
-Voice + visual guidance provided
 
-6. Use Cases
+Preventive Guidance
 
-Hospitals (patient & visitor navigation)
+Safe-use reminders
 
-Shopping malls
+Educational nudges
 
-Airports & railway stations
+Suggestions to seek professional advice (without diagnosis)
 
-University campuses
+Harm-reduction focused recommendations
 
-Corporate offices
 
-Smart buildings
+
+
+
+
+
+
+
+AI acts as a guide, not a decision-maker
+
+
+
